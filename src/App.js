@@ -42,7 +42,7 @@ class PomodoroApp extends Component {
     };
 
     handleRestart = () => {
-        this.setState({ minutes: 25, seconds: 0, isPaused: true });
+        this.setState({ minutes: this.state.minutes + 1, seconds: 0, isPaused: true });
     };
 
     handleIncreaseTime = () => {
@@ -58,18 +58,20 @@ class PomodoroApp extends Component {
     };
 
     render() {
-        const { minutes, seconds, isPaused, pomodoroMinutes, breakMinutes } = this.state;
+        const { minutes, seconds} = this.state;
         return (
-            <div>
+            <div className='py-3'>
                 <h1 class="text-center mb-5">Timer</h1>
-                <div className="timer text-center fs-3">
+                <div className="timer text-center fs-3 pt-2">
                     <button onClick={this.handleDecreaseTime} className="btn btn-secondary btn-adjust">-</button>
                     <span className="minutes">{`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`}</span>
                     <button onClick={this.handleIncreaseTime} className="btn btn-secondary btn-adjust">+</button>
                 </div>
-                <button class="btn btn-danger" onClick={this.handlePause}>Pausar</button>
-                <button class="btn btn-success" onClick={this.handleStart}>Iniciar</button>
-                <button class="btn btn-primary" onClick={this.handleRestart}>Reiniciar</button>
+                <div className="buttons">
+                    <button class="btn btn-danger w-25" onClick={this.handlePause}>Pausar</button>
+                    <button class="btn btn-success w-25" onClick={this.handleStart}>Iniciar</button>
+                    <button class="btn btn-primary w-25" onClick={this.handleRestart}>Reiniciar</button>
+                </div>
             </div>
         );
     }
