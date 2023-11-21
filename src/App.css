@@ -8,17 +8,17 @@ header {
     text-align: center; /* Centraliza o texto horizontalmente */
     padding: 10px 0; /* Espaçamento interno do cabeçalho */
     z-index: 999; /* Para garantir que o cabeçalho esteja sempre na parte superior */
+    font-size: 27px;
 }
 
-#app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} 
+.d-block {
+    margin-top: 90px;
+}
 
 .container {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 370px;
+    padding: 8px 2px 8px 2px;
     background: #fff;
 }
 
@@ -27,22 +27,29 @@ body {
     margin: 0px;
 }
 
+.buttons {
+    margin-left: 72px;
+}
+
 button {
-    margin-left: 15px;
-    margin-top: 80px;
+    margin-left: 10px;
+    margin-top: 110px;
 }
 
 .btn-adjust {
-    margin: 0 25px; /* Espaçamento horizontal entre os botões */
+    margin: 0 60px; /* Espaçamento horizontal entre os botões */
+    padding: 8px 17px 8px;
+    font-size: 25px;
 }
 
 .minutes {
-    font-size: 25px; /* Tamanho do texto dos minutos */
-    margin-top: 10px; /* Espaçamento entre os botões e o tempo */
+    font-size: 38px; /* Tamanho do texto dos minutos */
+    margin-top: 9px; /* Espaçamento entre os botões e o tempo */
 }
 
 footer {
     text-align: center;
+    font-size: 19px;
     padding: 20px;
     background-color: #333;
     color: #fff;
@@ -56,75 +63,536 @@ footer {
 footer a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px; /* Espaçamento entre os links */
+    margin: 0 40px; /* Espaçamento entre os links */
 }
 
-@media screen and (min-width: 350px) and (max-width: 1350px) {
-  header {
-      font-size: 25px;
-  }
+@media screen and (min-width: 750px) and (max-width: 1350px) {
+    header {
+        font-size: 25px;
+    }
+
+    .d-block {
+        margin-top: 50px;
+    }
+
+    .buttons {
+        margin-left: 55px;
+    }
+
+    button {
+        margin-left: 15px;
+        margin-top: 110px;
+    }
 }
 
-@media screen and (min-width: 300px) and (max-width: 350px) {
+@media screen and (min-width: 500px) and (max-width: 750px) {
+    header {
+        font-size: 25px;
+    }
+
+    .d-block {
+        margin-top: 50px;
+    }
+
+    .buttons {
+        margin-left: 55px;
+    }
+
+    button {
+        margin-left: 15px;
+        margin-top: 110px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    header {
+        font-size: 20px;
+    }
+
+    .d-block {
+        margin-top: 50px;
+    }
+
+    .container {
+        width: 400px;
+        height: 350px;
+        padding: 8px 2px 8px 2px;
+        background: #fff;
+    }
+
+    .btn-adjust {
+        width: 40px;
+        margin: 0 60px; /* Espaçamento horizontal entre os botões */
+        padding: 5px 10px 5px;
+        font-size: 27px;
+    }
+
+    .minutes {
+        font-size: 30px; /* Tamanho do texto dos minutos */
+        margin-top: 9px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 40px;
+    }
+
+    button {
+        margin-left: 15px;
+        margin-top: 110px;
+    }
+
     footer a {
-        font-size: 14px;
-        margin: 10px 0;
-        /* Espaçamento entre os links */
-    }  
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 30px; /* Espaçamento entre os links */
+    }
 }
 
-@media (max-width: 193px) {
+@media screen and (min-width: 360px) and (max-width: 399px) {
+    header {
+        font-size: 17px;
+    }
+
+    .d-block {
+        margin-top: 60px;
+    }
+
+    .container {
+        width: 300px;
+        height: 350px;
+        padding: 8px 2px 8px 2px;
+        background: #fff;
+    }
+
+    .btn-adjust {
+        width: 40px;
+        margin: 0 20px; /* Espaçamento horizontal entre os botões */
+        padding: 2px 10px 2px;
+        font-size: 27px;
+    }
+
+    .minutes {
+        font-size: 25px; /* Tamanho do texto dos minutos */
+        margin-top: 9px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 20px;
+    }
+
+    button {
+        margin-left: 15px;
+        margin-top: 100px;
+    }
+
+    .btn-danger {
+        padding: 5px;
+    }
+
+    .btn-success {
+        padding: 5px;
+    }
+
+    .btn-primary {
+        padding: 5px;
+    }
+
+    footer a {
+        font-size: 17px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 25px; /* Espaçamento entre os links */
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 359px) {
+    header {
+        font-size: 15px;
+    }
+
+    .d-block {
+        margin-top: 60px;
+    }
+
+    .container {
+        width: 300px;
+        height: 350px;
+        padding: 8px 2px 8px 2px;
+        background: #fff;
+    }
+
+    .btn-adjust {
+        width: 40px;
+        margin: 0 30px; /* Espaçamento horizontal entre os botões */
+        padding: 5px 10px 5px;
+        font-size: 27px;
+    }
+
+    .minutes {
+        font-size: 27px; /* Tamanho do texto dos minutos */
+        margin-top: 9px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 20px;
+        margin-bottom: 1px;
+    }
+
+    button {
+        margin-left: 15px;
+        margin-top: 100px;
+    }
+
+    .btn-danger {
+        padding: 5px;
+    }
+
+    .btn-success {
+        padding: 5px;
+    }
+
+    .btn-primary {
+        padding: 5px;
+    }
+
+    footer a {
+        font-size: 15px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px; /* Espaçamento entre os links */
+    }
+}
+
+@media screen and (min-width: 269px) and (max-width: 299px) {
+    header {
+        font-size: 15px;
+    }
+
+    .d-block {
+        margin-top: 60px;
+    }
+
+    .container {
+        width: 250px;
+        height: 300px;
+        padding: 1px 1px 1px 1px;
+        background: #fff;
+    }
+
+    .timer {
+        padding-block: 5px;
+    }
+
+    .btn-adjust {
+        width: 40px;
+        margin: 0 30px; /* Espaçamento horizontal entre os botões */
+        padding: 2px 2px 2px;
+        font-size: 27px;
+    }
+
+    .minutes {
+        font-size: 20px; /* Tamanho do texto dos minutos */
+        margin-top: 9px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 3px;
+        margin-bottom: 1px;
+    }
+
+    button {
+        margin-left: 15px;
+        margin-top: 100px;
+    }
+
+    .btn-danger {
+        padding: 1px;
+    }
+
+    .btn-success {
+        padding: 1px;
+    }
+
+    .btn-primary {
+        padding: 1px;
+    }
+
+    footer a {
+        font-size: 15px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px; /* Espaçamento entre os links */
+    }
+}
+
+@media screen and (min-width: 230px) and (max-width: 269px) {
+    header {
+        font-size: 15px;
+    }
+
+    .d-block {
+        margin-top: 90px;
+    }
+
+    .container {
+        width: 200px;
+        height: 250px;
+        padding: 1px 1px 1px 1px;
+        background: #fff;
+    }
+
+    .timer {
+        padding-block: 2px;
+    }
+
+    .btn-adjust {
+        width: 30px;
+        margin: 0 20px; /* Espaçamento horizontal entre os botões */
+        padding: 1px 1px 1px;
+        font-size: 27px;
+    }
+
+    .minutes {
+        font-size: 19px; /* Tamanho do texto dos minutos */
+        margin-top: 10px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 3px;
+        margin-bottom: 3px;
+    }
+
+    button {
+        margin-left: 12px;
+        margin-top: 60px;
+    }
+
+    .btn-danger {
+        font-size: 11px;
+        padding: 3px;
+    }
+
+    .btn-success {
+        font-size: 11px;
+        padding: 3px;
+    }
+
+    .btn-primary {
+        font-size: 11px;
+        padding: 4px;
+    }
+
+    footer a {
+        font-size: 15px;
+        color: #fff;
+        text-decoration: none;
+        margin: 0 7px; /* Espaçamento entre os links */
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 229px) {
+    header {
+        font-size: 15px;
+    }
+
+    .d-block {
+        margin-top: 90px;
+    }
+
+    .container {
+        width: 150px;
+        height: 250px;
+        padding: 1px 1px 1px 1px;
+        background: #fff;
+    }
+
+    .timer {
+        padding-block: 2px;
+    }
+
+    .btn-adjust {
+        width: 22px;
+        height: 38px;
+        margin: 0 15px; /* Espaçamento horizontal entre os botões */
+        padding: 1px 1px 1px;
+        font-size: 20px;
+    }
+
+    .minutes {
+        font-size: 18px; /* Tamanho do texto dos minutos */
+        margin-top: 10px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 12px;
+        margin-bottom: 3px;
+    }
+
+    button {
+        margin-left: 5px;
+        margin-top: 60px;
+    }
+
+    .btn-danger {
+        font-size: 8px;
+        padding: 5px;
+    }
+
+    .btn-success {
+        font-size: 8px;
+        padding: 5px;
+    }
+
+    .btn-primary {
+        font-size: 7px;
+        padding: 5px;
+    }
+
     footer a {
         font-size: 12px;
-        margin: 10px 0;
-        /* Espaçamento entre os links */
+        color: #fff;
+        text-decoration: none;
+        margin: 0 7px; /* Espaçamento entre os links */
     }
 }
 
-@media screen and (min-width: 190px) and (max-width: 250px) {
+@media screen and (min-width: 150px) and (max-width: 200px) {
     header {
         font-size: 15px;
     }
 
-    footer a {
-        font-size: 15px;
-        margin: 10px 0;
-        /* Espaçamento entre os links */
+    h1 {
+        font-size: 18px;
     }
-}
 
-@media screen and (min-width: 135px) and (max-width: 158px) {
-    header {
+    .d-block {
+        margin-top: 90px;
+    }
+
+    .container {
+        width: 150px;
+        height: 220px;
+        padding: 1px 1px 1px 1px;
+        background: #fff;
+    }
+
+    .timer {
+        padding-block: 2px;
+    }
+
+    .btn-adjust {
+        width: 25px;
+        height: 38px;
+        margin: 0 7px; /* Espaçamento horizontal entre os botões */
+        padding: 1px 1px 1px;
         font-size: 15px;
+    }
+
+    .minutes {
+        font-size: 17px; /* Tamanho do texto dos minutos */
+        margin-top: 10px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 12px;
+        margin-bottom: 3px;
+    }
+
+    button {
+        margin-left: 5px;
+        margin-top: 60px;
+    }
+
+    .btn-danger {
+        font-size: 7px;
+        padding: 4px;
+    }
+
+    .btn-success {
+        font-size: 7px;
+        padding: 4px;
+    }
+
+    .btn-primary {
+        font-size: 7px;
+        padding: 4px;
     }
 
     footer a {
         font-size: 10px;
-        margin: 10px 0;
-        /* Espaçamento entre os links */
+        color: #fff;
+        text-decoration: none;
+        margin: 0 2px; /* Espaçamento entre os links */
     }
 }
 
-@media screen and (min-width: 100px) and (max-width: 135px) {
+@media screen and (min-width: 100px) and (max-width: 150px) {
     header {
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+    .d-block {
+        margin-top: 97px;
+    }
+
+    .container {
+        width: 100px;
+        height: 210px;
+        padding: 1px 1px 1px 1px;
+        background: #fff;
+    }
+
+    .timer {
+        padding-block: 2px;
+    }
+
+    .btn-adjust {
+        width: 22px;
+        height: 30px;
+        margin: 0 3px; /* Espaçamento horizontal entre os botões */
+        padding: 1px 1px 1px;
+        font-size: 15px;
+    }
+
+    .minutes {
+        font-size: 12px; /* Tamanho do texto dos minutos */
+        margin-top: 10px; /* Espaçamento entre os botões e o tempo */
+    }
+
+    .buttons {
+        margin-left: 5px;
+        margin-bottom: 3px;
+    }
+
+    button {
+        margin-left: 5px;
+        margin-top: 60px;
+    }
+
+    .btn-danger {
+        font-size: 4px;
+        padding: 4px;
+    }
+
+    .btn-success {
+        font-size: 4px;
+        padding: 4px;
+    }
+
+    .btn-primary {
+        font-size: 4px;
+        padding: 4px;
     }
 
     footer a {
         font-size: 7px;
+        color: #fff;
+        text-decoration: none;
         margin: 10px 0;
-        /* Espaçamento entre os links */
-    }
-}
-
-@media screen and (min-width: 0px) and (max-width: 105px) {
-    header {
-    font-size: 9px;
-    }
-
-    footer a {
-        font-size: 5px;
-        margin: 10px 0;
-        /* Espaçamento entre os links */
     }
 }
