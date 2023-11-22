@@ -17,7 +17,7 @@ class PomodoroApp extends Component {
             if (!isPaused) {
                 if (minutes === 0 && seconds === 0) {
                     clearInterval(this.timerInterval);
-                    alert("Time is over!")
+                    this.audioRef = React.createRef();
                 } else {
                     if (seconds === 0) {
                         this.setState({ minutes: minutes - 1, seconds: 59 });
@@ -57,8 +57,12 @@ class PomodoroApp extends Component {
         }
     };
 
+    playAlarmSound = () => {
+        this.audioRef.current.play();
+    };
+
     render() {
-        const { minutes, seconds} = this.state;
+        const { minutes, seconds } = this.state;
         return (
             <div className='py-3'>
                 <h1 class="text-center mb-5">Timer</h1>
@@ -68,10 +72,11 @@ class PomodoroApp extends Component {
                     <button onClick={this.handleIncreaseTime} className="btn btn-secondary btn-adjust">+</button>
                 </div>
                 <div className="buttons">
-                    <button class="btn btn-danger w-25" onClick={this.handlePause}>Pausar</button>
-                    <button class="btn btn-success w-25" onClick={this.handleStart}>Iniciar</button>
-                    <button class="btn btn-primary w-25" onClick={this.handleRestart}>Reiniciar</button>
+                    <button class="btn btn-danger w-25" onClick={this.handlePause}>Stop</button>
+                    <button class="btn btn-success w-25" onClick={this.handleStart}>Start</button>
+                    <button class="btn btn-primary w-25" onClick={this.handleRestart}>Reset</button>
                 </div>
+                <audio ref={this.audioRef} src="C:\Users\ygor9\Downloads\pomodoro-app_alarm.mp3" style={{ display: 'none' }}></audio>
             </div>
         );
     }
