@@ -8,6 +8,8 @@ class PomodoroApp extends Component {
             minutes: 25,
             seconds: 0,
             isPaused: true,
+            initialMinutes: 25,
+            startWork: 'http://soundbible.com/grab.php?id=2061&type=mp3',
         };
     }
 
@@ -16,8 +18,8 @@ class PomodoroApp extends Component {
             const { minutes, seconds, isPaused } = this.state;
             if (!isPaused) {
                 if (minutes === 0 && seconds === 0) {
-                    clearInterval(this.timerInterval);
-                    this.audioRef = React.createRef();
+                    this.playSound();
+                    this.setState({ isPaused: true });
                 } else {
                     if (seconds === 0) {
                         this.setState({ minutes: minutes - 1, seconds: 59 });
@@ -42,24 +44,41 @@ class PomodoroApp extends Component {
     };
 
     handleRestart = () => {
-        this.setState({ minutes: this.state.minutes + 1, seconds: 0, isPaused: true });
-    };
+        const { initialMinutes, isPaused } = this.state;
 
+        if (isPaused) {
+            this.setState({ minutes: initialMinutes, seconds: 0, isPaused: false });
+        }
+    };
+    
     handleIncreaseTime = () => {
         const { minutes } = this.state;
-        this.setState({ minutes: minutes + 1 });
+        this.setState({ minutes: minutes + 1, initialMinutes: minutes + 1 });
     };
 
     handleDecreaseTime = () => {
         const { minutes } = this.state;
         if (minutes > 1) {
-            this.setState({ minutes: minutes - 1 });
+            this.setState({ minutes: minutes - 1, initialMinutes: minutes - 1});
         }
     };
 
-    playAlarmSound = () => {
-        this.audioRef.current.play();
-    };
+    playSound(){
+        this.setState({
+            playSound: true,
+        })
+        this.audio =  new Audio(this.state.startWork)
+        this.audio.load()
+        this.audio.volume = 0.8
+
+        this.audio.addEventListener('timeupdate', () => {
+            if (this.audio.currentTime > 8) {
+                this.audio.pause();
+            }
+        });
+
+        this.audio.play()
+    }
 
     render() {
         const { minutes, seconds } = this.state;
@@ -76,7 +95,6 @@ class PomodoroApp extends Component {
                     <button class="btn btn-success w-25" onClick={this.handleStart}>Start</button>
                     <button class="btn btn-primary w-25" onClick={this.handleRestart}>Reset</button>
                 </div>
-                <audio ref={this.audioRef} src="C:\Users\ygor9\Downloads\pomodoro-app_alarm.mp3" style={{ display: 'none' }}></audio>
             </div>
         );
     }
